@@ -1,0 +1,57 @@
+@use '../../styles/variables' as *;
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__logo {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+
+    .loader__bracket {
+      color: $accent;
+      text-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+    }
+
+    .loader__slash {
+      color: $accent2;
+      text-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
+      margin: 0 2px;
+    }
+  }
+
+  &__bar-wrap {
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__bar {
+    height: 100%;
+    background: linear-gradient(90deg, $accent, $accent2);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  &__text {
+    color: $text-muted;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}

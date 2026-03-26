@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+
+.cursor__dot,
+.cursor__ring {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.cursor__dot {
+  width: 8px;
+  height: 8px;
+  background: $accent;
+  box-shadow: 0 0 10px $accent;
+
+  &.hovering {
+    transform: translate(-50%, -50%) scale(2);
+    background: $accent2;
+  }
+}
+
+.cursor__ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(0, 212, 255, 0.5);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+
+  &.hovering {
+    width: 56px;
+    height: 56px;
+    border-color: $accent2;
+  }
+}
+
+@media (max-width: 768px) {
+  .cursor__dot,
+  .cursor__ring {
+    display: none;
+  }
+}
