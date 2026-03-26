@@ -10,7 +10,7 @@
 ![License](https://img.shields.io/badge/License-All_Rights_Reserved-red?style=for-the-badge)
 
 
-[🌐 Ver en Vivo](#) · [📧 Contacto](mailto:fraypatricio@gmail.com) · [💼 LinkedIn](https://linkedin.com/in/maxdev30) · [🐙 GitHub](https://github.com/maxdev30)
+[🌐 Ver en Vivo](#) · [📧 Contacto](mailto:fraypatricio@gmail.com) · [💼 LinkedIn](https://linkedin.com/in/maxpatricio) · [🐙 GitHub](https://github.com/maxdev30)
 
 </div>
 
@@ -109,9 +109,9 @@ Contiene toda la información: nombre, bio, skills, proyectos, experiencia y red
 
 ¿Interesado en trabajar juntos?
 
-- 📧 Email: [tuemail@gmail.com](mailto:tuemail@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/tuusuario](https://linkedin.com/in/tuusuario)
-- 🐙 GitHub: [github.com/tuusuario](https://github.com/tuusuario)
+- 📧 Email: [fraypatricio@gmail.com](mailto:fraypatricio@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/maxpatricio](https://linkedin.com/in/maxpatricio)
+- 🐙 GitHub: [github.com/maxdev30](https://github.com/maxdev30)
 
 <div align="center">
 

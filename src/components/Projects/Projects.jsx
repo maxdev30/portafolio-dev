@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FiExternalLink, FiZoomIn, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { projects } from '../../data/portfolio'
 import './Projects.scss'
 
@@ -9,8 +9,32 @@ const categories = ['Todos', '.NET', 'React', 'PHP', 'Python', 'DevOps']
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('Todos')
   const [selected, setSelected] = useState(null)
+  const [carouselIdx, setCarouselIdx] = useState(0)
+  const [lightbox, setLightbox] = useState(false)
+  const [lightboxIdx, setLightboxIdx] = useState(0)
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+
+  useEffect(() => { setCarouselIdx(0) }, [selected])
+
+  const openLightbox = useCallback((idx) => {
+    setLightboxIdx(idx)
+    setLightbox(true)
+  }, [])
+
+  const closeLightbox = useCallback(() => setLightbox(false), [])
+
+  useEffect(() => {
+    if (!lightbox) return
+    const imgs = selected?.images ?? []
+    const handleKey = (e) => {
+      if (e.key === 'Escape') closeLightbox()
+      if (e.key === 'ArrowRight') setLightboxIdx(i => (i + 1) % imgs.length)
+      if (e.key === 'ArrowLeft') setLightboxIdx(i => (i - 1 + imgs.length) % imgs.length)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [lightbox, selected, closeLightbox])
 
   const filtered = activeFilter === 'Todos'
     ? projects
@@ -63,11 +87,13 @@ const Projects = () => {
                 onClick={() => setSelected(project)}
               >
                 <div className="project-card__image-wrap">
-                  <div className="project-card__image-placeholder">
-                    <span className="project-card__category-badge">{project.category}</span>
-                    <div className="project-card__overlay">
-                      <span>Ver detalles</span>
-                    </div>
+                  {project.images?.[0]
+                    ? <img src={project.images[0]} alt={project.title} className="project-card__image" />
+                    : <div className="project-card__image-placeholder" />
+                  }
+                  <span className="project-card__category-badge">{project.category}</span>
+                  <div className="project-card__overlay">
+                    <span>Ver detalles</span>
                   </div>
                 </div>
 
@@ -85,18 +111,6 @@ const Projects = () => {
                   </div>
 
                   <div className="project-card__links">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project-card__link"
-                        onClick={e => e.stopPropagation()}
-                        aria-label="GitHub"
-                      >
-                        <FiGithub /> <span>Código</span>
-                      </a>
-                    )}
                     {project.demo && (
                       <a
                         href={project.demo}
@@ -106,7 +120,7 @@ const Projects = () => {
                         onClick={e => e.stopPropagation()}
                         aria-label="Demo"
                       >
-                        <FiExternalLink /> <span>Demo</span>
+                        <FiExternalLink /> <span>Ver Demo</span>
                       </a>
                     )}
                   </div>
@@ -134,6 +148,52 @@ const Projects = () => {
                 onClick={e => e.stopPropagation()}
               >
                 <button className="projects__modal-close" onClick={() => setSelected(null)}>×</button>
+
+                {selected.images?.length > 0 && (
+                  <div className="projects__modal-carousel">
+                    <div
+                      className="projects__modal-carousel-clickable"
+                      onClick={e => { e.stopPropagation(); openLightbox(carouselIdx) }}
+                      title="Ampliar imagen"
+                    >
+                      <img
+                        src={selected.images[carouselIdx]}
+                        alt={`${selected.title} - ${carouselIdx + 1}`}
+                        className="projects__modal-carousel-img"
+                      />
+                      <div className="projects__modal-carousel-zoom">
+                        <FiZoomIn />
+                        <span>Ampliar</span>
+                      </div>
+                    </div>
+                    {selected.images.length > 1 && (
+                      <>
+                        <button
+                          className="projects__carousel-btn projects__carousel-btn--prev"
+                          onClick={e => { e.stopPropagation(); setCarouselIdx(i => (i - 1 + selected.images.length) % selected.images.length) }}
+                          aria-label="Anterior"
+                        ><FiChevronLeft /></button>
+                        <button
+                          className="projects__carousel-btn projects__carousel-btn--next"
+                          onClick={e => { e.stopPropagation(); setCarouselIdx(i => (i + 1) % selected.images.length) }}
+                          aria-label="Siguiente"
+                        ><FiChevronRight /></button>
+                        <div className="projects__carousel-thumbs">
+                          {selected.images.map((img, idx) => (
+                            <img
+                              key={idx}
+                              src={img}
+                              alt={`thumb ${idx + 1}`}
+                              className={`projects__carousel-thumb${idx === carouselIdx ? ' active' : ''}`}
+                              onClick={e => { e.stopPropagation(); setCarouselIdx(idx) }}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
+
                 <h2 className="projects__modal-title">{selected.title}</h2>
                 <p className="projects__modal-desc">{selected.description}</p>
                 <div className="projects__modal-highlights">
@@ -148,11 +208,6 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="projects__modal-links">
-                  {selected.github && (
-                    <a href={selected.github} target="_blank" rel="noreferrer" className="btn-outline">
-                      <FiGithub /> <span>Ver Código</span>
-                    </a>
-                  )}
                   {selected.demo && (
                     <a href={selected.demo} target="_blank" rel="noreferrer" className="btn-primary">
                       <FiExternalLink /> <span>Ver Demo</span>
@@ -160,6 +215,68 @@ const Projects = () => {
                   )}
                 </div>
               </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Lightbox */}
+        <AnimatePresence>
+          {lightbox && selected?.images?.length > 0 && (
+            <motion.div
+              className="projects__lightbox"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeLightbox}
+            >
+              <button className="projects__lightbox-close" onClick={closeLightbox} aria-label="Cerrar">
+                <FiX />
+              </button>
+
+              <button
+                className="projects__lightbox-nav projects__lightbox-nav--prev"
+                onClick={e => { e.stopPropagation(); setLightboxIdx(i => (i - 1 + selected.images.length) % selected.images.length) }}
+                aria-label="Anterior"
+              >
+                <FiChevronLeft />
+              </button>
+
+              <motion.div
+                className="projects__lightbox-img-wrap"
+                key={lightboxIdx}
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={e => e.stopPropagation()}
+              >
+                <img
+                  src={selected.images[lightboxIdx]}
+                  alt={`${selected.title} - ${lightboxIdx + 1}`}
+                  className="projects__lightbox-img"
+                />
+                <p className="projects__lightbox-counter">{lightboxIdx + 1} / {selected.images.length}</p>
+              </motion.div>
+
+              <button
+                className="projects__lightbox-nav projects__lightbox-nav--next"
+                onClick={e => { e.stopPropagation(); setLightboxIdx(i => (i + 1) % selected.images.length) }}
+                aria-label="Siguiente"
+              >
+                <FiChevronRight />
+              </button>
+
+              <div className="projects__lightbox-thumbs" onClick={e => e.stopPropagation()}>
+                {selected.images.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt={`thumb ${idx + 1}`}
+                    className={`projects__lightbox-thumb${idx === lightboxIdx ? ' active' : ''}`}
+                    onClick={() => setLightboxIdx(idx)}
+                  />
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
