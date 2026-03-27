@@ -70,7 +70,7 @@ const About = () => {
               </div>
             </div>
 
-            <a href={personalInfo.cvUrl} download className="btn-primary about__cv">
+            <a href={personalInfo.cvUrl} target="_blank" rel="noreferrer noopener" className="btn-primary about__cv">
               <FiDownload /> <span>Descargar CV</span>
             </a>
           </motion.div>

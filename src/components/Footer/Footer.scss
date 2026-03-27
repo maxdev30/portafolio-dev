@@ -27,12 +27,20 @@
   }
 
   &__logo {
-    font-size: 1.8rem;
-    font-weight: 900;
     cursor: none;
+    display: inline-flex;
+    align-items: center;
 
-    .bracket { color: $accent; }
-    .slash   { color: $accent2; }
+    &-img {
+      height: 45px;
+      width: auto;
+      display: block;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 
   &__tagline {

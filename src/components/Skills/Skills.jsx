@@ -3,9 +3,10 @@ import { motion, useInView } from 'framer-motion'
 import {
   FaReact, FaPhp, FaPython, FaDocker, FaGithub,
   FaHtml5, FaCss3Alt, FaBootstrap, FaDatabase,
+  FaWhatsapp, FaRobot, FaCogs, FaPaintBrush,
 } from 'react-icons/fa'
 import {
-  SiDotnet, SiJavascript, SiMysql, SiSass, SiTailwindcss,
+  SiDotnet, SiJavascript, SiMysql, SiSass, SiTailwindcss, SiOpenai,
 } from 'react-icons/si'
 import { skills } from '../../data/portfolio'
 import './Skills.scss'
@@ -25,15 +26,26 @@ const iconMap = {
   docker: <FaDocker />,
   github: <FaGithub />,
   actions: <FaGithub />,
+  // IA & Automatización
+  n8n: <FaCogs />,
+  whatsapp: <FaWhatsapp />,
+  openai: <SiOpenai />,
+  robot: <FaRobot />,
+  // Diseño Gráfico
+  photoshop: <FaPaintBrush />,
+  illustrator: <FaPaintBrush />,
+  design: <FaPaintBrush />,
 }
 
-const categories = ['Todos', 'Frontend', 'Backend', 'Database', 'DevOps']
+const categories = ['Todos', 'Frontend', 'Backend', 'Database', 'DevOps', 'IA & Automatización', 'Diseño Gráfico']
 
 const categoryColors = {
-  Frontend: '#00d4ff',
-  Backend:  '#7b2ff7',
-  Database: '#ff6b6b',
-  DevOps:   '#28c840',
+  Frontend:             '#00d4ff',
+  Backend:              '#7b2ff7',
+  Database:             '#ff6b6b',
+  DevOps:               '#28c840',
+  'IA & Automatización': '#25D366',
+  'Diseño Gráfico':     '#FF6B35',
 }
 
 const Skills = () => {

@@ -27,10 +27,7 @@ const Navbar = () => {
       <div className="navbar__container">
         {/* Logo */}
         <Link to="home" smooth duration={600} className="navbar__logo">
-          <span className="navbar__logo-bracket">&lt;</span>
-          <span className="navbar__logo-name">Dev</span>
-          <span className="navbar__logo-slash">/</span>
-          <span className="navbar__logo-bracket">&gt;</span>
+          <img src="/logo-max-developer.svg" alt="Max Developer Logo" className="navbar__logo-img" />
         </Link>
 
         {/* Links desktop */}
@@ -55,7 +52,8 @@ const Navbar = () => {
         {/* CV Button */}
         <a
           href={personalInfo.cvUrl}
-          download
+          target="_blank"
+          rel="noreferrer noopener"
           className="btn-primary navbar__cv"
         >
           <FiDownload />
@@ -103,7 +101,8 @@ const Navbar = () => {
             ))}
             <a
               href={personalInfo.cvUrl}
-              download
+              target="_blank"
+              rel="noreferrer noopener"
               className="btn-primary navbar__mobile-cv"
               onClick={() => setMenuOpen(false)}
             >

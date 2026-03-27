@@ -4,7 +4,7 @@ import { FiExternalLink, FiZoomIn, FiX, FiChevronLeft, FiChevronRight } from 're
 import { projects } from '../../data/portfolio'
 import './Projects.scss'
 
-const categories = ['Todos', '.NET', 'React', 'PHP', 'Python', 'DevOps']
+const categories = ['Todos', '.NET', 'React', 'PHP', 'Python', 'DevOps', 'IA / Chatbots']
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('Todos')

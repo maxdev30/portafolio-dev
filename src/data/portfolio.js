@@ -11,7 +11,7 @@ export const personalInfo = {
   location: 'Perú',
   github: 'https://github.com/maxdev30',
   linkedin: 'https://linkedin.com/in/maxpatricio',
-  cvUrl: '/cv.pdf',
+  cvUrl: 'https://drive.google.com/file/d/1e8nYDQQ0OVWZtpo2caUxC9EtU-5evYH8/view?usp=sharing',
   bio: `Ingeniero de Sistemas con sólida experiencia en desarrollo fullstack, 
   aplicaciones móviles y sistemas empresariales. Apasionado por crear soluciones 
   eficientes, escalables y con gran experiencia de usuario. Especializado en 
@@ -40,6 +40,15 @@ export const skills = [
   { name: 'Docker', level: 78, category: 'DevOps', icon: 'docker' },
   { name: 'GitHub', level: 90, category: 'DevOps', icon: 'github' },
   { name: 'GitHub Actions', level: 75, category: 'DevOps', icon: 'actions' },
+  // IA & Automatización
+  { name: 'n8n / Make', level: 88, category: 'IA & Automatización', icon: 'n8n' },
+  { name: 'WhatsApp Business API', level: 90, category: 'IA & Automatización', icon: 'whatsapp' },
+  { name: 'OpenAI API', level: 82, category: 'IA & Automatización', icon: 'openai' },
+  { name: 'Chatbots IA', level: 87, category: 'IA & Automatización', icon: 'robot' },
+  // Diseño Gráfico
+  { name: 'Photoshop', level: 82, category: 'Diseño Gráfico', icon: 'photoshop' },
+  { name: 'Illustrator', level: 78, category: 'Diseño Gráfico', icon: 'illustrator' },
+  { name: 'Canva / IA Generativa', level: 85, category: 'Diseño Gráfico', icon: 'design' },
 ]
 
 export const projects = [
@@ -50,12 +59,26 @@ export const projects = [
     tech: ['.NET Core', 'SQL Server', 'Dapper', 'Bootstrap', 'JavaScript'],
     category: '.NET',
     images: [
-      '/projects/project1-1.jpg',
-      '/projects/project1-2.jpg',
-      '/projects/project1-3.jpg',
+      '/projects/dash-admin-ted0.JPG',
+      '/projects/dash-admin-ted1.JPG',
+      '/projects/dash-admin-ted2.JPG',
+      '/projects/dash-admin-ted3.JPG',
+      '/projects/dash-admin-ted4.JPG',
+      '/projects/dash-admin-ted5.JPG',
+      '/projects/dash-admin-ted6.JPG',
+      '/projects/dash-admin-ted7.JPG',
+      '/projects/dash-admin-ted8.JPG',
+      '/projects/dash-admin-ted9.JPG',
+      '/projects/dash-admin-ted10.JPG',
+      '/projects/dash-admin-ted11.JPG',
+      '/projects/dash-admin-ted12.JPG',
+      '/projects/dash-admin-ted13.JPG',
+      '/projects/dash-admin-ted14.JPG',
+      '/projects/dash-admin-ted15.JPG',
+      '/projects/dash-admin-ted16.JPG',
     ],
     github: null,
-    demo: 'https://tedinnova.com',
+    demo: '#',
     highlights: ['QR Asistencia', 'Carrito de Compras', 'Gestión de Notas', 'Control de Pagos'],
   },
   {
@@ -124,6 +147,25 @@ export const projects = [
     demo: null,
     highlights: ['CI/CD', 'Tests Automáticos', 'Docker', 'Auto-deploy'],
   },
+  {
+    id: 6,
+    title: 'Automatización WhatsApp con IA — Chatbots para Empresas',
+    description: 'Desarrollo de chatbots inteligentes y asistentes virtuales para WhatsApp con Inteligencia Artificial. Automatizan la atención al cliente 24/7, agendado de citas, envío de correos, respuestas a preguntas frecuentes y seguimiento de clientes. Implementados para múltiples industrias: clínicas, gimnasios, odontología, hoteles, agencias de viajes, mecánicas, ferreterías, librerías jurídicas y estudios de abogados.',
+    tech: ['n8n', 'Make', 'WhatsApp API', 'OpenAI', 'IA Conversacional'],
+    category: 'IA / Chatbots',
+    images: [
+      '/projects/chatbot-agencia-viajes.png',
+      '/projects/chatbot-mecanicas.png',
+      '/projects/chatbot-medico.png',
+      '/projects/chatbot-contador.png',
+      '/projects/chatbot-hoteles.png',
+      '/projects/chatbot-abogado.png',
+      '/projects/chatbot-gimnasio.png',
+    ],
+    github: null,
+    demo: '#',
+    highlights: ['Atención al Cliente 24/7', 'Agendado de Citas', 'Múltiples Industrias', 'IA Conversacional'],
+  },
 ]
 
 export const experience = [
@@ -155,6 +197,16 @@ export const experience = [
     type: 'Híbrido',
     description: 'Desarrollo del Sistema de Gestión Educativa para academia preuniversitaria (matrícula, notas, asistencias, pagos y carrito de compras con escaneo QR) y de la app móvil TED Mobile para corrección automática de exámenes mediante escaneo óptico de cartillas físicas.',
     tech: ['.NET Core', 'SQL Server', 'React', 'JavaScript', 'Python', 'Bootstrap'],
+    icon: 'work',
+  },
+  {
+    id: 4,
+    role: 'Especialista en Automatización IA & Diseño Gráfico',
+    company: 'Freelance / TED Innova',
+    period: '2022 — Presente',
+    type: 'Freelance',
+    description: 'Desarrollo e implementación de chatbots inteligentes y asistentes virtuales para WhatsApp orientados a la automatización de atención al cliente, agendado de citas, envío de correos y generación de respuestas con IA. Clientes en sectores como clínicas, gimnasios, odontología, hoteles, agencias de viajes, mecánicas, ferreterías y librerías jurídicas. También integración con redes sociales (Facebook, Instagram). Diseño gráfico profesional con Photoshop, Illustrator y herramientas de IA generativa.',
+    tech: ['n8n', 'Make', 'WhatsApp API', 'OpenAI', 'Photoshop', 'Illustrator', 'IA Generativa'],
     icon: 'work',
   },
 ]

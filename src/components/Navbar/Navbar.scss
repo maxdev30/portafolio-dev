@@ -32,17 +32,19 @@
   }
 
   &__logo {
-    font-size: 1.5rem;
-    font-weight: 900;
     cursor: none;
+    display: flex;
+    align-items: center;
 
-    &-bracket { color: $accent; }
-    &-name    { color: $text-light; margin: 0 2px; }
-    &-slash   { color: $accent2; }
+    &-img {
+      height: 45px;
+      width: auto;
+      display: block;
+      transition: opacity 0.2s;
+    }
 
-    &:hover .navbar__logo-name {
-      color: $accent;
-      transition: color 0.2s;
+    &:hover &-img {
+      opacity: 0.85;
     }
   }
 
