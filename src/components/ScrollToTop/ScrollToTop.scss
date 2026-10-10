@@ -15,10 +15,10 @@
   justify-content: center;
   cursor: none;
   z-index: 999;
-  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 5px 20px rgba(255, 46, 77, 0.4);
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 8px 30px rgba(255, 46, 77, 0.6);
   }
 }

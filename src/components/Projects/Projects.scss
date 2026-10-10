@@ -29,7 +29,7 @@
       background: linear-gradient(135deg, $accent, $accent2);
       border-color: transparent;
       color: white;
-      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(255, 46, 77, 0.3);
     }
   }
 
@@ -151,7 +151,7 @@
     transition: background 0.2s;
     z-index: 2;
 
-    &:hover { background: rgba(0, 212, 255, 0.35); }
+    &:hover { background: rgba(255, 46, 77, 0.35); }
     &--prev { left: 0.6rem; }
     &--next { right: 0.6rem; }
   }
@@ -259,7 +259,7 @@
     transition: background 0.2s;
     z-index: 10;
 
-    &:hover { background: rgba(0, 212, 255, 0.25); color: $accent; }
+    &:hover { background: rgba(255, 46, 77, 0.25); color: $accent; }
   }
 
   &__lightbox-nav {
@@ -280,7 +280,7 @@
     transition: background 0.2s;
     z-index: 10;
 
-    &:hover { background: rgba(0, 212, 255, 0.3); color: $accent; }
+    &:hover { background: rgba(255, 46, 77, 0.3); color: $accent; }
     &--prev { left: 1.5rem; }
     &--next { right: 1.5rem; }
 
@@ -346,7 +346,7 @@
   flex-direction: column;
 
   &:hover {
-    border-color: rgba(0, 212, 255, 0.2);
+    border-color: rgba(255, 46, 77, 0.2);
     box-shadow: $shadow-hover;
 
     .project-card__overlay { opacity: 1; }
@@ -364,7 +364,7 @@
   &__image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,47,247,0.15));
+    background: linear-gradient(135deg, rgba(255, 46, 77,0.08), rgba(255, 122, 69,0.15));
     border-bottom: 1px solid rgba(255,255,255,0.06);
     position: relative;
     display: flex;

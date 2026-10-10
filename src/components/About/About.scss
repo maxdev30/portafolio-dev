@@ -105,7 +105,7 @@
     transition: $transition;
 
     &:hover {
-      border-color: rgba(0, 212, 255, 0.2);
+      border-color: rgba(255, 46, 77, 0.2);
       box-shadow: $shadow-hover;
     }
 
@@ -127,8 +127,8 @@
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(123,47,247,0.15));
-    border: 1px solid rgba(0,212,255,0.2);
+    background: linear-gradient(135deg, rgba(255, 46, 77,0.15), rgba(255, 122, 69,0.15));
+    border: 1px solid rgba(255, 46, 77,0.2);
     display: flex;
     align-items: center;
     justify-content: center;

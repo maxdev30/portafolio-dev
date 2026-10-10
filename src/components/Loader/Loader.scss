@@ -23,12 +23,12 @@
 
     .loader__bracket {
       color: $accent;
-      text-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+      text-shadow: 0 0 30px rgba(255, 46, 77, 0.8);
     }
 
     .loader__slash {
       color: $accent2;
-      text-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
+      text-shadow: 0 0 30px rgba(255, 122, 69, 0.8);
       margin: 0 2px;
     }
   }
@@ -45,7 +45,7 @@
     height: 100%;
     background: linear-gradient(90deg, $accent, $accent2);
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 46, 77, 0.5);
   }
 
   &__text {

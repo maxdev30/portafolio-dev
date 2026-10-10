@@ -150,7 +150,7 @@ a {
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 46, 77, 0.3);
 
     &::before {
       opacity: 1;
@@ -181,16 +181,16 @@ a {
     background: $accent;
     color: $primary;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 46, 77, 0.3);
   }
 }
 
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(255, 46, 77, 0.1);
   color: $accent;
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(255, 46, 77, 0.2);
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 500;

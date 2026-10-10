@@ -32,7 +32,7 @@ const Hero = () => {
       particles.forEach(p => {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,212,255,${p.alpha})`
+        ctx.fillStyle = `rgba(255, 46, 77,${p.alpha})`
         ctx.fill()
         p.x += p.dx
         p.y += p.dy

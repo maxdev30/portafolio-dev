@@ -49,8 +49,8 @@
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(123,47,247,0.15));
-    border: 1px solid rgba(0,212,255,0.2);
+    background: linear-gradient(135deg, rgba(255, 46, 77,0.15), rgba(255, 122, 69,0.15));
+    border: 1px solid rgba(255, 46, 77,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,7 +149,7 @@
       &:focus {
         outline: none;
         border-color: $accent;
-        box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+        box-shadow: 0 0 0 3px rgba(255, 46, 77,0.08);
       }
     }
   }
@@ -169,7 +169,7 @@
   }
 
   &__error {
-    color: #ff6b6b;
+    color: #ff2e4d;
     font-size: 0.9rem;
     text-align: center;
   }

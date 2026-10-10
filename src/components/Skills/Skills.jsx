@@ -40,12 +40,12 @@ const iconMap = {
 const categories = ['Todos', 'Frontend', 'Backend', 'Database', 'DevOps', 'IA & Automatización', 'Diseño Gráfico']
 
 const categoryColors = {
-  Frontend:             '#00d4ff',
-  Backend:              '#7b2ff7',
-  Database:             '#ff6b6b',
+  Frontend:             '#ff2e4d',
+  Backend:              '#ff7a45',
+  Database:             '#4f8bff',
   DevOps:               '#28c840',
   'IA & Automatización': '#25D366',
-  'Diseño Gráfico':     '#FF6B35',
+  'Diseño Gráfico':     '#ffb547',
 }
 
 const Skills = () => {

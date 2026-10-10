@@ -32,7 +32,7 @@
       background: linear-gradient(135deg, $accent, $accent2);
       border-color: transparent;
       color: white;
-      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(255, 46, 77, 0.3);
     }
   }
 
@@ -61,7 +61,7 @@
     transition: $transition;
 
     &:hover {
-      border-color: rgba(0, 212, 255, 0.25);
+      border-color: rgba(255, 46, 77, 0.25);
       box-shadow: $shadow-hover;
     }
   }

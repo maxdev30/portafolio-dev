@@ -6,8 +6,8 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 20% 50%, rgba(123, 47, 247, 0.08) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
+  background: radial-gradient(ellipse at 20% 50%, rgba(255, 122, 69, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(255, 46, 77, 0.08) 0%, transparent 60%),
               $primary;
 
   @media (max-width: 900px) {
@@ -29,13 +29,13 @@
 
     &--1 {
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 46, 77,0.12) 0%, transparent 70%);
       top: -100px; right: 10%;
       animation: float 6s ease-in-out infinite;
     }
     &--2 {
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(123,47,247,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 122, 69,0.12) 0%, transparent 70%);
       bottom: 10%; left: 5%;
       animation: float 8s ease-in-out infinite reverse;
     }
@@ -184,14 +184,14 @@
       border-color: $accent;
       color: $accent;
       transform: translateY(-3px);
-      box-shadow: 0 5px 20px rgba(0,212,255,0.2);
+      box-shadow: 0 5px 20px rgba(255, 46, 77,0.2);
     }
   }
 
   &__social-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(0,212,255,0.4), transparent);
+    background: linear-gradient(90deg, rgba(255, 46, 77,0.4), transparent);
     max-width: 80px;
   }
 
@@ -219,7 +219,7 @@
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 
     &:hover {
-      box-shadow: 0 30px 80px rgba(0, 212, 255, 0.15);
+      box-shadow: 0 30px 80px rgba(255, 46, 77, 0.15);
     }
   }
 
